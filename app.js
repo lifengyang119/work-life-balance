@@ -1,19 +1,11 @@
-// ========== 王嘉尔图库照片 ==========
-const wangjiaerPhotos = [
-    "https://p1.music.126.net/2XqMJZ3hHqOIqfOjOqKJ3w==/109951165441225638.jpg?imageView2/2/w/480",
-    "https://p2.music.126.net/KqOqMJZ3hHqOIqfOjOqKJ3w==/109951165441225638.jpg?imageView2/2/w/480",
-];
-
-// 使用 Unsplash 来源的王嘉尔相关高清图片 (通过 Unsplash Source 获取)
+// ========== Gallery 图片 ==========
 const galleryImages = [
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=480&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=480&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=480&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=480&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=480&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=480&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=480&h=300&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=480&h=300&fit=crop&q=80",
+    "./photo/image.jpg",
+    "./photo/image (1).jpg",
+    "./photo/image (2).jpg",
+    "./photo/image (3).jpg",
+    "./photo/image (4).jpg",
+    "./photo/image (5).jpg",
 ];
 
 // ========== 食物卡路里数据库 ==========

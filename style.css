@@ -12,9 +12,9 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 24px 16px;
+    padding: 24px 32px;
 }
 
 /* Header */
@@ -27,14 +27,15 @@ header {
 }
 
 .art-title {
-    font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL XiaoWei', serif;
-    font-size: 42px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    font-weight: 700;
     background: linear-gradient(90deg, #6366f1, #ec4899, #f59e0b);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     white-space: nowrap;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
 
 header .datetime {
@@ -78,13 +79,51 @@ header .datetime {
     padding-left: 10px;
 }
 
-/* Top row: weather + gallery */
-.top-row {
+.card h2.card-title-section {
+    border-left: none;
+    padding-left: 0;
+    font-size: 18px;
+}
+
+/* Card header */
+.card-header {
+    margin-bottom: 16px;
+}
+
+/* Weather + Gallery horizontal layout */
+.weather-gallery-row {
     display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.weather-panel {
+    width: 40%;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-title {
+    font-size: 20px;
+    border-left: 4px solid #6366f1;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    color: #334155;
+}
+
+.gallery-title {
+    font-size: 20px;
+    border-left: 4px solid #6366f1;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    color: #334155;
 }
 
 /* Weather */
@@ -92,7 +131,6 @@ header .datetime {
     display: flex;
     align-items: center;
     gap: 14px;
-    flex: 1;
     min-width: 220px;
 }
 
@@ -124,11 +162,11 @@ header .datetime {
 }
 
 .clothes-suggestion {
-    flex: 1;
-    min-width: 220px;
+    margin-top: 16px;
     background: #f8fafc;
     border-radius: 10px;
     padding: 14px 18px;
+    flex: 1;
 }
 
 .clothes-suggestion h3 {
@@ -150,6 +188,7 @@ header .datetime {
 
 .gallery {
     width: 100%;
+    flex: 1;
     overflow: hidden;
     position: relative;
     border-radius: 12px;
@@ -394,8 +433,12 @@ header .datetime {
     .meal-grid {
         grid-template-columns: 1fr;
     }
-    .top-row {
+    .weather-gallery-row {
         flex-direction: column;
+    }
+    .weather-panel,
+    .gallery-panel {
+        width: 100%;
     }
     .gallery img {
         height: 140px;

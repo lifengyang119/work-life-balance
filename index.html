@@ -6,37 +6,39 @@
     <title>双开门冰箱</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1 class="art-title">双开门冰箱</h1>
+            <h1 class="art-title">Serendipity</h1>
             <div id="datetime" class="datetime"></div>
             <div id="workday-status"></div>
         </header>
 
         <section class="card">
-            <h2>Weather</h2>
-            <div class="top-row">
-                <div class="weather-info" id="weather-info">
-                    <div class="weather-icon" id="weather-icon"></div>
-                    <div class="weather-detail">
-                        <span id="weather-status"></span>
-                        <span id="weather-temp"></span>
-                        <span id="weather-desc"></span>
+            <div class="weather-gallery-row">
+                <div class="weather-panel" id="weather-panel">
+                    <div class="weather-title">⛅</div>
+                    <div class="weather-info" id="weather-info">
+                        <div class="weather-icon" id="weather-icon"></div>
+                        <div class="weather-detail">
+                            <span id="weather-status"></span>
+                            <span id="weather-temp"></span>
+                            <span id="weather-desc"></span>
+                        </div>
+                    </div>
+                    <div class="clothes-suggestion" id="clothes-suggestion">
+                        <h3>穿衣建议</h3>
+                        <p id="clothes-text"></p>
                     </div>
                 </div>
-                <div class="clothes-suggestion" id="clothes-suggestion">
-                    <h3>穿衣建议</h3>
-                    <p id="clothes-text"></p>
-                </div>
-            </div>
-            <div class="gallery-card">
-                <h2>Gallery</h2>
-                <div class="gallery" id="gallery">
-                    <div class="gallery-track" id="gallery-track"></div>
+                <div class="gallery-panel">
+                    <div class="gallery-title">📸</div>
+                    <div class="gallery" id="gallery">
+                        <div class="gallery-track" id="gallery-track"></div>
+                    </div>
                 </div>
             </div>
         </section>
