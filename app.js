@@ -1,4 +1,135 @@
-// ========== 数据 ==========
+// ========== 王嘉尔图库照片 ==========
+const wangjiaerPhotos = [
+    "https://p1.music.126.net/2XqMJZ3hHqOIqfOjOqKJ3w==/109951165441225638.jpg?imageView2/2/w/480",
+    "https://p2.music.126.net/KqOqMJZ3hHqOIqfOjOqKJ3w==/109951165441225638.jpg?imageView2/2/w/480",
+];
+
+// 使用 Unsplash 来源的王嘉尔相关高清图片 (通过 Unsplash Source 获取)
+const galleryImages = [
+    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=480&h=300&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=480&h=300&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=480&h=300&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=480&h=300&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=480&h=300&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=480&h=300&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=480&h=300&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=480&h=300&fit=crop&q=80",
+];
+
+// ========== 食物卡路里数据库 ==========
+const foodDatabase = {
+    breakfast: [
+        { keywords: ["小米粥", "粥"], cal: 150 },
+        { keywords: ["鸡蛋"], cal: 70 },
+        { keywords: ["小菜"], cal: 30 },
+        { keywords: ["馒头"], cal: 220 },
+        { keywords: ["全麦面包", "面包"], cal: 130 },
+        { keywords: ["牛奶"], cal: 120 },
+        { keywords: ["香蕉"], cal: 90 },
+        { keywords: ["坚果"], cal: 180 },
+        { keywords: ["皮蛋瘦肉粥"], cal: 200 },
+        { keywords: ["油条"], cal: 250 },
+        { keywords: ["凉拌黄瓜"], cal: 25 },
+        { keywords: ["燕麦片", "燕麦"], cal: 150 },
+        { keywords: ["酸奶"], cal: 100 },
+        { keywords: ["蓝莓"], cal: 35 },
+        { keywords: ["蜂蜜"], cal: 60 },
+        { keywords: ["阳春面", "面"], cal: 300 },
+        { keywords: ["煎蛋"], cal: 120 },
+        { keywords: ["葱花"], cal: 10 },
+        { keywords: ["榨菜"], cal: 15 },
+        { keywords: ["豆浆"], cal: 80 },
+        { keywords: ["包子"], cal: 180 },
+        { keywords: ["玉米"], cal: 110 },
+        { keywords: ["煮鸡蛋"], cal: 75 },
+        { keywords: ["牛油果吐司"], cal: 200 },
+        { keywords: ["黑咖啡", "咖啡"], cal: 5 },
+        { keywords: ["橙子"], cal: 60 },
+        { keywords: ["紫薯粥"], cal: 160 },
+        { keywords: ["茶叶蛋"], cal: 80 },
+        { keywords: ["蒸南瓜"], cal: 70 },
+        { keywords: ["苹果"], cal: 95 },
+    ],
+    lunch: [
+        { keywords: ["米饭"], cal: 230 },
+        { keywords: ["宫保鸡丁"], cal: 350 },
+        { keywords: ["清炒时蔬", "时蔬"], cal: 80 },
+        { keywords: ["番茄蛋汤"], cal: 100 },
+        { keywords: ["牛肉拉面"], cal: 400 },
+        { keywords: ["凉菜"], cal: 60 },
+        { keywords: ["酸梅汤"], cal: 120 },
+        { keywords: ["鸡胸肉沙拉", "沙拉"], cal: 250 },
+        { keywords: ["果蔬汁"], cal: 80 },
+        { keywords: ["鱼香肉丝"], cal: 320 },
+        { keywords: ["紫菜蛋花汤"], cal: 80 },
+        { keywords: ["凉拌木耳"], cal: 40 },
+        { keywords: ["腊味煲仔饭", "煲仔饭"], cal: 450 },
+        { keywords: ["青菜"], cal: 50 },
+        { keywords: ["例汤"], cal: 60 },
+        { keywords: ["猪肉白菜水饺", "水饺", "饺子"], cal: 350 },
+        { keywords: ["醋"], cal: 5 },
+        { keywords: ["蒜泥"], cal: 20 },
+        { keywords: ["牛排"], cal: 380 },
+        { keywords: ["烤时蔬"], cal: 100 },
+        { keywords: ["糙米饭"], cal: 200 },
+        { keywords: ["麻婆豆腐"], cal: 280 },
+        { keywords: ["回锅肉"], cal: 360 },
+        { keywords: ["绿豆汤"], cal: 90 },
+    ],
+    dinner: [
+        { keywords: ["清蒸鱼"], cal: 250 },
+        { keywords: ["蒜蓉西兰花"], cal: 100 },
+        { keywords: ["豆腐汤"], cal: 80 },
+        { keywords: ["火锅"], cal: 500 },
+        { keywords: ["肥牛"], cal: 300 },
+        { keywords: ["豆制品"], cal: 120 },
+        { keywords: ["排骨莲藕汤"], cal: 350 },
+        { keywords: ["清炒菜心"], cal: 60 },
+        { keywords: ["杂粮饭"], cal: 200 },
+        { keywords: ["三文鱼寿司", "寿司"], cal: 300 },
+        { keywords: ["味噌汤"], cal: 60 },
+        { keywords: ["海藻沙拉"], cal: 50 },
+        { keywords: ["窑鸡"], cal: 400 },
+        { keywords: ["烤土豆"], cal: 180 },
+        { keywords: ["蔬菜沙拉"], cal: 80 },
+        { keywords: ["水果拼盘"], cal: 120 },
+        { keywords: ["松仁玉米"], cal: 200 },
+        { keywords: ["蚝油生菜"], cal: 80 },
+        { keywords: ["南瓜粥"], cal: 120 },
+        { keywords: ["馒头"], cal: 220 },
+        { keywords: ["橄榄油煎虾"], cal: 280 },
+        { keywords: ["意面"], cal: 350 },
+        { keywords: ["凯撒沙拉"], cal: 180 },
+        { keywords: ["法棍"], cal: 200 },
+        { keywords: ["砂锅粥"], cal: 180 },
+        { keywords: ["卤味"], cal: 250 },
+        { keywords: ["凉拌三丝"], cal: 60 },
+    ],
+    general: [
+        // 通用食物 - 按关键词匹配
+        { keywords: ["水"], cal: 0 },
+        { keywords: ["茶"], cal: 2 },
+        { keywords: ["可乐"], cal: 140 },
+        { keywords: ["啤酒"], cal: 150 },
+        { keywords: ["方便面"], cal: 450 },
+        { keywords: ["汉堡"], cal: 400 },
+        { keywords: ["披萨"], cal: 300 },
+        { keywords: ["炸鸡"], cal: 350 },
+        { keywords: ["薯条"], cal: 320 },
+        { keywords: ["蛋糕"], cal: 280 },
+        { keywords: ["巧克力"], cal: 230 },
+        { keywords: ["冰淇淋"], cal: 200 },
+        { keywords: ["坚果"], cal: 180 },
+        { keywords: ["沙拉"], cal: 150 },
+        { keywords: ["汤"], cal: 80 },
+        { keywords: ["炒"], cal: 200 },
+        { keywords: ["蒸"], cal: 180 },
+        { keywords: ["烤"], cal: 250 },
+        { keywords: ["煮"], cal: 150 },
+    ]
+};
+
+// ========== 餐单数据 ==========
 
 const meals = {
     breakfast: [
@@ -70,7 +201,7 @@ function isWorkTime(now) {
     const h = now.getHours();
     const m = now.getMinutes();
     const total = h * 60 + m;
-    return total >= 570 && total < 1080; // 9:30 = 570min, 18:00 = 1080min
+    return total >= 570 && total < 1080;
 }
 
 function getWorkStatus(now) {
@@ -93,6 +224,40 @@ function getSeason(temp) {
     return { clothes: "天气寒冷，请穿羽绒服、厚棉服等保暖服饰。搭配围巾、手套和帽子。", tip: "做好全面防寒措施" };
 }
 
+// 卡路里计算 - 根据食物文本匹配数据库
+function calculateCalories(text) {
+    if (!text || !text.trim()) return 0;
+    let total = 0;
+    const matched = new Set();
+
+    // 先匹配长关键词（优先匹配多字词）
+    const allFoodList = [...foodDatabase.breakfast, ...foodDatabase.lunch, ...foodDatabase.dinner, ...foodDatabase.general];
+    const sorted = allFoodList.sort((a, b) => {
+        const aLen = Math.max(...a.keywords.map(k => k.length));
+        const bLen = Math.max(...b.keywords.map(k => k.length));
+        return bLen - aLen;
+    });
+
+    for (const food of sorted) {
+        for (const kw of food.keywords) {
+            if (text.includes(kw) && !matched.has(kw)) {
+                total += food.cal;
+                matched.add(kw);
+                break;
+            }
+        }
+    }
+
+    // 如果完全没匹配到，返回估算值
+    if (total === 0) {
+        // 估算：每10个字约 150-250 卡路里
+        const charCount = text.replace(/\s+/g, '').length;
+        total = Math.round(charCount * 20);
+    }
+
+    return total;
+}
+
 // ========== 渲染函数 ==========
 
 function renderDatetime() {
@@ -111,9 +276,8 @@ function renderDatetime() {
 }
 
 function renderWeather() {
-    // 模拟随机天气 (实际可对接天气 API)
     const weather = randomPick(weatherTypes);
-    const temp = Math.floor(Math.random() * 35) + 2; // 2~36°C
+    const temp = Math.floor(Math.random() * 35) + 2;
 
     document.getElementById('weather-icon').textContent = weather.icon;
     document.getElementById('weather-status').textContent = weather.status;
@@ -122,6 +286,15 @@ function renderWeather() {
 
     const season = getSeason(temp);
     document.getElementById('clothes-text').innerHTML = `${season.clothes}<br><small>💡 ${season.tip}</small>`;
+}
+
+function renderGallery() {
+    const track = document.getElementById('gallery-track');
+    // 复制两组图片实现无缝循环
+    const images = [...galleryImages, ...galleryImages];
+    track.innerHTML = images.map(src =>
+        `<img src="${src}" alt="Gallery" loading="lazy">`
+    ).join('');
 }
 
 function renderMeals() {
@@ -139,21 +312,83 @@ function renderMeals() {
     });
 }
 
+function renderUserMealEditor() {
+    const saved = JSON.parse(localStorage.getItem('wl_usermeals') || '{}');
+    const tbody = document.getElementById('user-meal-tbody');
+    tbody.innerHTML = '';
+
+    const mealKeys = [
+        { key: 'breakfast', label: '早餐' },
+        { key: 'lunch', label: '午餐' },
+        { key: 'dinner', label: '晚餐' },
+    ];
+
+    mealKeys.forEach((m) => {
+        const savedText = saved[m.key] || '';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><strong>${m.label}</strong></td>
+            <td><input type="text" data-meal="${m.key}" placeholder="输入今天${m.label}吃了什么..." value="${savedText}"></td>
+            <td class="cal-cell" id="cal-${m.key}">0</td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    // 绑定输入事件
+    tbody.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', () => {
+            const mealKey = input.getAttribute('data-meal');
+            const text = input.value.trim();
+
+            // 保存
+            const notes = JSON.parse(localStorage.getItem('wl_usermeals') || '{}');
+            notes[mealKey] = text;
+            localStorage.setItem('wl_usermeals', JSON.stringify(notes));
+
+            // 计算卡路里
+            const cal = calculateCalories(text);
+            document.getElementById(`cal-${mealKey}`).textContent = cal;
+
+            // 总计
+            let total = 0;
+            tbody.querySelectorAll('input').forEach(inp => {
+                total += calculateCalories(inp.value.trim());
+            });
+            document.getElementById('total-calories').textContent = total;
+        });
+    });
+
+    // 初始化已有数据
+    mealKeys.forEach(m => {
+        const input = tbody.querySelector(`[data-meal="${m.key}"]`);
+        if (input && saved[m.key]) {
+            const cal = calculateCalories(saved[m.key]);
+            document.getElementById(`cal-${m.key}`).textContent = cal;
+        }
+    });
+
+    // 计算总计
+    let total = 0;
+    tbody.querySelectorAll('input').forEach(inp => {
+        total += calculateCalories(inp.value.trim());
+    });
+    document.getElementById('total-calories').textContent = total;
+}
+
 function renderStatusTable() {
     const { now } = getNow();
     const workday = isWorkDay(now);
     const workTime = isWorkTime(now);
 
     const periods = [
-        { label: '早晨', start: '06:00', end: '09:30', type: workday ? 'rest' : 'rest' },
-        { label: '上午工作', start: '09:30', end: '12:00', type: workTime ? 'work' : '' },
+        { label: '早晨', start: '06:00', end: '09:30', type: 'rest' },
+        { label: '上午工作', start: '09:30', end: '12:00', type: isWorkTime(now) ? 'work' : '' },
         { label: '午休', start: '12:00', end: '14:00', type: 'rest' },
-        { label: '下午工作', start: '14:00', end: '18:00', type: workTime ? 'work' : '' },
+        { label: '下午工作', start: '14:00', end: '18:00', type: isWorkTime(now) ? 'work' : '' },
         { label: '晚间', start: '18:00', end: '22:00', type: 'rest' },
         { label: '睡前', start: '22:00', end: '06:00', type: 'rest' },
     ];
 
-    // 加载之前保存的备注
     const saved = JSON.parse(localStorage.getItem('wl_notes') || '{}');
 
     const tbody = document.getElementById('status-tbody');
@@ -175,7 +410,6 @@ function renderStatusTable() {
         tbody.appendChild(tr);
     });
 
-    // 绑定输入事件，自动保存
     tbody.querySelectorAll('textarea').forEach(ta => {
         ta.addEventListener('input', () => {
             const key = ta.getAttribute('data-key');
@@ -191,7 +425,9 @@ function renderStatusTable() {
 function init() {
     renderDatetime();
     renderWeather();
+    renderGallery();
     renderMeals();
+    renderUserMealEditor();
     renderStatusTable();
 
     // 每秒更新时间
