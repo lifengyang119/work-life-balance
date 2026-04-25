@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生活平衡助手</title>
+    <title>双开门冰箱</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>生活平衡助手</h1>
+            <h1 class="art-title">双开门冰箱</h1>
             <div id="datetime" class="datetime"></div>
             <div id="workday-status"></div>
         </header>
 
         <section class="card">
-            <h2>天气与穿衣</h2>
-            <div class="weather-clothes">
+            <h2>Weather</h2>
+            <div class="top-row">
                 <div class="weather-info" id="weather-info">
                     <div class="weather-icon" id="weather-icon"></div>
                     <div class="weather-detail">
@@ -30,10 +33,16 @@
                     <p id="clothes-text"></p>
                 </div>
             </div>
+            <div class="gallery-card">
+                <h2>Gallery</h2>
+                <div class="gallery" id="gallery">
+                    <div class="gallery-track" id="gallery-track"></div>
+                </div>
+            </div>
         </section>
 
         <section class="card">
-            <h2>今日餐单建议</h2>
+            <h2>餐单建议</h2>
             <div class="meal-grid">
                 <div class="meal-card">
                     <div class="meal-header">
@@ -61,7 +70,26 @@
         </section>
 
         <section class="card">
-            <h2>今日状态记录</h2>
+            <h2>饮食记录</h2>
+            <div class="user-meal-editor">
+                <table class="user-meal-table">
+                    <thead>
+                        <tr>
+                            <th>时段</th>
+                            <th>实际饮食</th>
+                            <th>卡路里 (kcal)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-meal-tbody"></tbody>
+                </table>
+                <div class="calorie-total">
+                    今日总计：<strong id="total-calories">0</strong> kcal
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>状态记录</h2>
             <table class="status-table">
                 <thead>
                     <tr>
