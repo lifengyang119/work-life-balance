@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #fce7f3 100%);
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.datetime {
+    font-size: 20px;
+    color: #475569;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#workday-status {
+    display: inline-block;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#workday-status.workday {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+#workday-status.rest {
+    background: #d1fae5;
+    color: #059669;
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: #334155;
+    border-left: 4px solid #6366f1;
+    padding-left: 10px;
+}
+
+/* Weather & Clothes */
+.weather-clothes {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 220px;
+}
+
+.weather-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.weather-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#weather-status {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+#weather-temp {
+    font-size: 28px;
+    color: #475569;
+}
+
+#weather-desc {
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.clothes-suggestion {
+    flex: 1;
+    min-width: 220px;
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 14px 18px;
+}
+
+.clothes-suggestion h3 {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+#clothes-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+/* Meal Grid */
+.meal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.meal-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.meal-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.meal-header {
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breakfast + .meal-body, .meal-header:first-child {
+    background: #fef9c3;
+}
+
+.meal-header .meal-time {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.meal-header .meal-clock {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.meal-card:nth-child(1) .meal-header { background: #fef9c3; }
+.meal-card:nth-child(2) .meal-header { background: #fef3c7; }
+.meal-card:nth-child(3) .meal-header { background: #fce7f3; }
+
+.meal-body {
+    padding: 14px;
+    min-height: 80px;
+}
+
+.meal-body h4 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #1e293b;
+}
+
+.meal-body p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.btn-reload {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-reload:hover {
+    background: #4f46e5;
+}
+
+/* Status Table */
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.status-table th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #f1f5f9;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.status-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.status-table tr:last-child td {
+    border-bottom: none;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.type-badge.work {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.type-badge.rest {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.status-table textarea {
+    width: 100%;
+    min-height: 60px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.status-table textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99,102,241,0.15);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .meal-grid {
+        grid-template-columns: 1fr;
+    }
+    .weather-clothes {
+        flex-direction: column;
+    }
+    .status-table {
+        font-size: 13px;
+    }
+}
